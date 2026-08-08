@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inventory | Certified Pre-Owned Vehicles | Sirius Motorsports Inc.</title>
+<meta name="description" content="Browse the full inventory at Sirius Motorsports Inc. — certified pre-owned Land Rover, BMW, Ford, Nissan and more in Tillsonburg, Ontario." />
+<meta name="keywords" content="Used Cars Ontario, Land Rover Ontario, BMW Ontario, Certified Pre-Owned Vehicles" />
+<meta property="og:title" content="Inventory | Sirius Motorsports Inc." />
+<meta property="og:description" content="Certified pre-owned luxury vehicles available now in Ontario." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">S</div>
+      <div class="brand-name">SIRIUS <span>MOTORSPORTS</span></div>
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="financing.html">Financing</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-gold">Contact Us</a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Showroom</span>
+    <h1>Our Inventory</h1>
+    <div class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Inventory</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="invSearch" placeholder="Search by make or model (e.g. Land Rover)" />
+      <select id="invStatus">
+        <option value="all">All Status</option>
+        <option value="available">Available</option>
+        <option value="sold">Sold</option>
+      </select>
+    </div>
+    <div class="inventory-grid" id="inventoryGrid"></div>
+  </div>
+</section>
+
+<section class="section section-dark" id="enquiry">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Enquire</span>
+      <h2>Interested? Let's Talk.</h2>
+      <div class="divider"></div>
+      <p>Send us a message and our team will reply within one business day.</p>
+    </div>
+    <div style="max-width:760px;margin:0 auto">
+      <div class="form-card">
+        <div class="form-success">Thank you — your enquiry has been received. We'll be in touch shortly.</div>
+        <form data-form action="mailto:harley@siriusconinc.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-group"><label>Name</label><input type="text" name="name" required /></div>
+            <div class="form-group"><label>Phone</label><input type="tel" name="phone" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Email</label><input type="email" name="email" required /></div>
+            <div class="form-group"><label>Vehicle Interested In</label><input type="text" id="vehicleInterest" name="vehicle" placeholder="e.g. 2016 Land Rover Discovery Sport" /></div>
+          </div>
+          <div class="form-group"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
+          <button type="submit" class="btn btn-gold">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand"><div class="brand-mark">S</div><div class="brand-name">SIRIUS <span>MOTORSPORTS</span></div></div>
+        <p>Premium pre-owned luxury vehicles, hand-picked and certified for Ontario drivers who expect more.</p>
+      </div>
+      <div><h4>Explore</h4><ul>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+        <li><a href="inventory.html">Inventory</a></li><li><a href="financing.html">Financing</a></li>
+        <li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="terms.html">Terms &amp; Conditions</a></li><li><a href="privacy.html">Privacy Policy</a></li></ul></div>
+      <div><h4>Contact</h4><ul>
+        <li>D-39 North St E, Tillsonburg, ON N4G1B4</li>
+        <li><a href="tel:5196358872">519-635-8872</a></li>
+        <li><a href="mailto:harley@siriusconinc.com">harley@siriusconinc.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span data-year></span> Sirius Motorsports Inc. All Rights Reserved.</div>
+      <div><a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const VEHICLES = [
+  {t:"2013 Land Rover Evoque", sub:"Sold • Certified", price:"$13,999", note:"Certified", mileage:"140,465 KM", ext:"White", int:"Black", trans:"Automatic", status:"sold", img:"https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80"},
+  {t:"2012 Land Rover Evoque 2 Door", sub:"Sold • Certified", price:"$11,999", note:"Certified", mileage:"174,546 KM", ext:"Gray", int:"Black", trans:"Automatic", status:"sold", img:"https://images.unsplash.com/photo-1612825173281-9a193378527e?auto=format&fit=crop&w=900&q=80"},
+  {t:"2016 Land Rover Discovery Sport HSE Luxury", sub:"7 Seater • Certified", price:"$28,999", note:"Certified", mileage:"88,354 KM", ext:"Gray", int:"Brown", trans:"Automatic", status:"sold", img:"https://images.unsplash.com/photo-1519440733971-c44b34b5d3f1?auto=format&fit=crop&w=900&q=80"},
+  {t:"2012 Ford Fiesta", sub:"Available", price:"$5,999", note:"", mileage:"121,452 KM", ext:"Black", int:"Black", trans:"Automatic", status:"available", img:"https://images.unsplash.com/photo-1547038577-da80abbc4f19?auto=format&fit=crop&w=900&q=80"},
+  {t:"2015 Nissan Micra", sub:"Available", price:"$6,999", note:"+ HST", mileage:"148,242 KM", ext:"Gray", int:"Black", trans:"Automatic", status:"available", img:"https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80"},
+  {t:"2012 BMW X1 Sport Package", sub:"Available", price:"$8,000", note:"+ HST", mileage:"218,500 KM", ext:"White", int:"Black", trans:"Automatic", status:"available", img:"https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80"},
+  {t:"2013 Fiat 500", sub:"Available", price:"$6,499", note:"+ HST", mileage:"104,745 KM", ext:"Green", int:"Green", trans:"Automatic", status:"available", img:"https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?auto=format&fit=crop&w=900&q=80"}
+];
+function card(v){
+  const badge = v.status==='sold' ? '<span class="badge badge-sold">Sold</span>' : '<span class="badge badge-available">Available</span>';
+  const enquire = v.status==='sold'
+    ? '<a href="#enquiry" class="btn btn-outline" data-enquire="'+v.t+'">Enquire Now</a>'
+    : '<a href="#enquiry" class="btn btn-gold" data-enquire="'+v.t+'">Enquire Now</a>';
+  return `<article class="vehicle-card" data-vehicle="${v.t}" data-status="${v.status}">
+    <div class="vehicle-img"><img src="${v.img}" alt="${v.t}" loading="lazy"/>${badge}</div>
+    <div class="vehicle-body">
+      <div class="vehicle-sub">${v.sub}</div>
+      <h3 class="vehicle-title">${v.t}</h3>
+      <div class="vehicle-price">${v.price} ${v.note?`<small>${v.note}</small>`:''}</div>
+      <div class="spec-grid">
+        <div><span class="k">Mileage</span><span class="v">${v.mileage}</span></div>
+        <div><span class="k">Transmission</span><span class="v">${v.trans}</span></div>
+        <div><span class="k">Exterior</span><span class="v">${v.ext}</span></div>
+        <div><span class="k">Interior</span><span class="v">${v.int}</span></div>
+      </div>
+      ${enquire}
+    </div></article>`;
+}
+document.getElementById('inventoryGrid').innerHTML = VEHICLES.map(card).join('');
+</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

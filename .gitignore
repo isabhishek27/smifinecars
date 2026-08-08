@@ -1,0 +1,58 @@
+#-------------------------
+# Operating Specific Junk
+#-------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+#-------------------------
+# Environment / Secrets
+#-------------------------
+.env
+.env.*
+!.env.example
+
+#-------------------------
+# Composer
+#-------------------------
+/vendor/
+
+#-------------------------
+# IDE / Editor
+#-------------------------
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+#-------------------------
+# CodeIgniter writable
+#-------------------------
+/writable/cache/*
+!/writable/cache/index.html
+/writable/logs/*
+!/writable/logs/index.html
+/writable/session/*
+!/writable/session/index.html
+/writable/uploads/*
+!/writable/uploads/index.html
+/writable/debugbar/*
+
+#-------------------------
+# User uploads (keep folders)
+#-------------------------
+/public/uploads/**/*
+!/public/uploads/**/index.html
+!/public/uploads/**/.gitkeep
+
+#-------------------------
+# Misc
+#-------------------------
+php_errors.log
+error_log
+*.log
+/public/ping.php
+/public/_debug_edit.php
