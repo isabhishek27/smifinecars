@@ -36,12 +36,21 @@ class Home extends FrontendController {
             $data['meta_desc'] = $pg_data->meta_desc;
             $data['meta_keyword'] = $pg_data->meta_keyword;
             $data['page_title'] = $pg_data->page_title;
-            $data['page_content'] = str_replace('{{img_path}}', base_url().'/public/assets/', $pg_data->page_content);
+            $data['page_content'] = $this->replacePagePlaceholders($pg_data->page_content);
         } else {
             $data['meta_title'] = 'Sirius Motorsports Inc. | Premium Luxury Used Cars in Ontario';
             $data['meta_desc'] = 'Premium pre-owned luxury vehicles in Tillsonburg, Ontario.';
             $data['meta_keyword'] = 'Luxury Used Cars, Used Cars Ontario';
+            $data['page_content'] = '';
         }
+
+        $bottom = $this->pages_model->getCmsPageContent(
+            'p.`page_content`',
+            " AND `page_slug` = 'home-about-financing' "
+        );
+        $data['home_bottom_content'] = is_object($bottom)
+            ? $this->replacePagePlaceholders($bottom->page_content)
+            : '';
 
         $data['products'] = $this->products_model->getRecords('*', ' AND `is_featured` = 1 ', 6);
         if (empty($data['products'])) {
@@ -51,5 +60,24 @@ class Home extends FrontendController {
         $data['mylib'] = $this->mylib;
         $data['include'] = $this->viewDirectory . '\home_views';
         return view('container', $data);
+    }
+
+    private function replacePagePlaceholders(string $content): string
+    {
+        return str_replace(
+            [
+                '{{img_path}}',
+                '{{base_url}}',
+                '{{about_us_url}}',
+                '{{financing_url}}',
+            ],
+            [
+                base_url() . '/public/assets/',
+                base_url(),
+                site_url('about-us'),
+                site_url('financing'),
+            ],
+            $content
+        );
     }
 }
